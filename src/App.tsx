@@ -1,9 +1,11 @@
 import React, { FormEvent, useState, ChangeEvent, useEffect } from 'react';
 import { TableRow, Http } from './http';
+import Title from './Title';
+import TextField from './TextField';
+
 
 //useAlgumaCoisa
 //WEB Component funcao -> renderizacao
-
 
 function App() {
   
@@ -52,12 +54,14 @@ function App() {
   
   return (
     <div>
-      <h1>Iniciando com o React</h1>
+      <Title>Iniciando com o React</Title>
       <form onSubmit={onSubmit}>
-         <p>
-           <label htmlFor="name">Nome:</label>
-           <input type="text" id="name" value={name} onChange={onChangeName}/>
-         </p>
+          <TextField 
+                    id="name" 
+                    type="text" 
+                    value={name}
+                    onChange={onChangeName}
+          />
          <p>
            {name}
          </p>
